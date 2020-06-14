@@ -21,7 +21,8 @@ namespace MyAppMainPage
                 TheNote = string.Empty;
             });
         }
-        public ObservableCollection<string> AllNotes { get; set; }
+        public ObservableCollection<string> AllNotes = new ObservableCollection<string>();
+        //{ get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         string theNote;
@@ -36,6 +37,7 @@ namespace MyAppMainPage
                 var args = new PropertyChangedEventArgs(nameof(TheNote));
 
                 PropertyChanged?.Invoke(this, args);
+                System.Diagnostics.Debug.WriteLine("TheNote value is now: " + TheNote);
             }
         }
 
