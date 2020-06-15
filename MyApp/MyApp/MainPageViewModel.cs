@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -17,6 +18,8 @@ namespace MyAppMainPage
             SaveCommand = new Command(() =>
             {
                 AllNotes.Add(TheNote);
+
+                //outputTestLabel.Text = AllNotes;
 
                 TheNote = string.Empty;
             });

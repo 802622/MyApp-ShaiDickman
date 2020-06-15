@@ -17,6 +17,7 @@ namespace MyApp
         public MainPage()
         {
             InitializeComponent();
+            outputTestLabel.Text = "wazzup";
 
         }
     }
