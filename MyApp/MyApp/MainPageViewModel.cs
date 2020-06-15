@@ -25,6 +25,7 @@ namespace MyAppMainPage
             });
         }
         public ObservableCollection<string> AllNotes = new ObservableCollection<string>();
+        public string outputTestLabel;
         //{ get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -41,6 +42,8 @@ namespace MyAppMainPage
 
                 PropertyChanged?.Invoke(this, args);
                 System.Diagnostics.Debug.WriteLine("TheNote value is now: " + TheNote);
+                outputTestLabel = TheNote;
+                System.Diagnostics.Debug.WriteLine("outputTestLabel is now: " + outputTestLabel);
             }
         }
 

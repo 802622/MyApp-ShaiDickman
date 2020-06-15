@@ -32,8 +32,8 @@
         <Button Grid.Row="2" Grid.Column="1" Text="Erase" BackgroundColor="Green" TextColor="White"
                 Margin="10,0" Command="{Binding EraseCommand}"/>
 
-        <Label x:Name="outputTestLabel" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Text="The value of AllNotes is currently nothing" BackgroundColor="Gray" TextColor="White"  Margin="30,30"/>
-        
+        <Label Text="Binding outputTestLabel" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" BackgroundColor="Gray" TextColor="White"  Margin="30,30"/>
+
         <CollectionView ItemsSource="{Binding AllNotes}" Grid.Row="3" Grid.ColumnSpan="2">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

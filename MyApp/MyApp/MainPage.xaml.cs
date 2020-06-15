@@ -16,8 +16,7 @@ namespace MyApp
     {
         public MainPage()
         {
-            InitializeComponent();
-            outputTestLabel.Text = "wazzup";
+            InitializeComponent();//this runs once at runtime(probably)
 
         }
     }
