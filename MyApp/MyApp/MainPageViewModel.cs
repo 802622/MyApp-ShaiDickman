@@ -11,21 +11,30 @@ namespace MyAppMainPage
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
+        public ObservableCollection<Notes> AllNotes;// { get; set; }//change to string?
+        public string TestString = "test";
+        public int iteration = 0;
         public MainPageViewModel()
         {
+            AllNotes = new ObservableCollection<Notes>()
+            {
+                new Notes(){Note="testPrewriteNote"}
+            };
             EraseCommand = new Command(() => { TheNote = string.Empty; });
             SaveCommand = new Command(() =>
             {
-                System.Diagnostics.Debug.WriteLine("allNotes is: " + AllNotes);
-                System.Diagnostics.Debug.WriteLine("TheNote is: " +  TheNote);
-                AllNotes.Add(TheNote);
+                System.Diagnostics.Debug.WriteLine("allNotes is: " + AllNotes[iteration].Note);
+                System.Diagnostics.Debug.WriteLine("TheNote is: " + TheNote);
+                AllNotes.Add(new Notes() {Note = TheNote });
                 //AllNotes += TheNote;
+                iteration++;
+                TestString += AllNotes[iteration].Note;
+
 
                 TheNote = string.Empty;
             });
         }
-        public ObservableCollection<string> AllNotes { get; set; }//change to string?\
-        AllNotes.Add("heyHeyHEY");
+
         //public string AllNotes = "zsfasdf";
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -46,6 +55,11 @@ namespace MyAppMainPage
 
         public Command SaveCommand { get; }
         public Command EraseCommand { get; }
+
+        public class Notes
+        {
+            public string Note { get; set; }
+        }
         
        
 
